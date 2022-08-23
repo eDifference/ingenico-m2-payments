@@ -1,5 +1,5 @@
 {
-    "name": "ingenico/m2-payment",
+    "name": "edifference/m2-payment",
     "description": "Ingenico ePayments Module",
     "require": {
         "monolog/monolog": "*",
