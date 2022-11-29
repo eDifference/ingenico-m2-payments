@@ -1,5 +1,5 @@
 {
-    "name": "edifference/m2-payment",
+    "name": "ingenico/m2-payment",
     "description": "Ingenico ePayments Module",
     "require": {
         "monolog/monolog": "*",
@@ -9,7 +9,6 @@
         "ingenico/ogone-client": "^7.1.0"
     },
     "type": "magento2-module",
-    "version": "2.12.3",
     "license": [
         "OSL-3.0"
     ],

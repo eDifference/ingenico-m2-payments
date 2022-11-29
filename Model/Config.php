@@ -250,7 +250,7 @@ class Config extends \Magento\Framework\App\Config
             self::XML_PATH_FLEX_METHODS,
             ScopeInterface::SCOPE_STORE,
             $scopeId
-        );
+        ) ?? [];
 
         return !is_array($methods) ? (array) json_decode($methods, true) : $methods;
     }
