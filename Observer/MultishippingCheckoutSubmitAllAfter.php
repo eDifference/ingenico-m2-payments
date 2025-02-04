@@ -197,7 +197,7 @@ class MultishippingCheckoutSubmitAllAfter implements ObserverInterface
         try {
             $mainOrder = $this->quoteManagement->submit($quote1);
         } catch (\Exception $e) {
-            $this->connector->log(sprintf('%s::%s %s', __CLASS__, __METHOD__, $e->getMessage()), 'crit');
+            $this->connector->log(sprintf('%s::%s %s', __CLASS__, __METHOD__, $e->getMessage()), 'critical');
 
             throw new LocalizedException(__('An error occurred. Please try to place the order again.'));
         }

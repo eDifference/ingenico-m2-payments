@@ -1417,7 +1417,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
 
             return true;
         } catch (\Exception $e) {
-            $this->log($e->getMessage(), 'crit');
+            $this->log($e->getMessage(), 'critical');
         }
 
         return false;
@@ -1514,7 +1514,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                 $locale
             );
         } catch (\Exception $e) {
-            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'crit');
+            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'critical');
         }
 
         return false;
@@ -1569,7 +1569,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                 $locale
             );
         } catch (\Exception $e) {
-            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'crit');
+            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'critical');
         }
 
         return false;
@@ -1639,7 +1639,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                 $locale
             );
         } catch (\Exception $e) {
-            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'crit');
+            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'critical');
         }
 
         $this->appEmulation->stopEnvironmentEmulation();
@@ -1757,7 +1757,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                 $locale
             );
         } catch (\Exception $e) {
-            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'crit');
+            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'critical');
         }
 
         return false;
@@ -1811,7 +1811,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                 $locale
             );
         } catch (\Exception $e) {
-            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'crit');
+            $this->log(self::PARAM_NAME_MAIL_SENDING_FAILED . $e->getMessage(), 'critical');
         }
 
         return false;
@@ -1903,7 +1903,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                     ->save();
             }
         } catch (\Exception $e) {
-            $this->logger->crit('Failed saving payment transaction: ' . $e->getMessage());
+            $this->logger->critical('Failed saving payment transaction: ' . $e->getMessage());
         }
 
         // process Magento Transaction if needed
@@ -2084,7 +2084,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
                     ->save();
             }
         } catch (\Exception $e) {
-            $this->logger->crit('Failed saving alias: ' . $e->getMessage());
+            $this->logger->critical('Failed saving alias: ' . $e->getMessage());
 
             return false;
         }
@@ -2361,7 +2361,7 @@ class Connector extends AbstractConnector implements ConnectorInterface
             $order = $this->processor->getOrderByIncrementId($orderId);
             $this->reminderFactory->create()->register($order);
         } catch (\Exception $e) {
-            $this->log($e->getMessage(), 'crit');
+            $this->log($e->getMessage(), 'critical');
         }
     }
 

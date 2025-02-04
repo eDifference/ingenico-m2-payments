@@ -279,7 +279,7 @@ class Processor
 
             throw $e;
         } catch (\Exception $e) {
-            $this->connector->log($e->getMessage(), 'crit');
+            $this->connector->log($e->getMessage(), 'critical');
         }
 
         return $order;
@@ -378,7 +378,7 @@ class Processor
         } catch (LocalizedException $e) {
             $this->connector->log(sprintf('%s::%s %s', __CLASS__, __METHOD__, $e->getMessage()));
         } catch (\Exception $e) {
-            $this->connector->log($e->getMessage(), 'crit');
+            $this->connector->log($e->getMessage(), 'critical');
         }
 
         return $this->orderRepository->save($order);

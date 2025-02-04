@@ -214,7 +214,7 @@ class AbstractMethod extends \Magento\Payment\Model\Method\AbstractMethod
                 ->setIsTransactionClosed(0)
                 ->setAdditionalInformation(Transaction::RAW_DETAILS, $result->getData());
         } catch (\Exception $e) {
-            $this->connector->log($e->getMessage(), 'crit');
+            $this->connector->log($e->getMessage(), 'critical');
             throw new LocalizedException(__($e->getMessage()));
         }
 
@@ -282,7 +282,7 @@ class AbstractMethod extends \Magento\Payment\Model\Method\AbstractMethod
         } catch (LocalizedException $e) {
             throw new LocalizedException(__($e->getMessage()));
         } catch (\IngenicoClient\Exception $e) {
-            $this->connector->log($e->getMessage(), 'crit');
+            $this->connector->log($e->getMessage(), 'critical');
 
             $msg = __('modal.refund_failed.label1');
             $msg .= ' '.__('modal.refund_failed.label2') . ' ' . $this->connector->getCoreLibrary()->getWhiteLabelsData()->getSupportEmail();
@@ -325,7 +325,7 @@ class AbstractMethod extends \Magento\Payment\Model\Method\AbstractMethod
                     ->setIsTransactionClosed(1)
                     ->setAdditionalInformation(Transaction::RAW_DETAILS, $result);
         } catch (\Exception $e) {
-            $this->connector->log($e->getMessage(), 'crit');
+            $this->connector->log($e->getMessage(), 'critical');
 
             throw new LocalizedException(__($e->getMessage()));
         }

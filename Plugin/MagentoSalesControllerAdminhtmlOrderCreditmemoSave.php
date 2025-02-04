@@ -191,7 +191,7 @@ class MagentoSalesControllerAdminhtmlOrderCreditmemoSave
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
         } catch (\IngenicoClient\Exception $e) {
-            $this->connector->log($e->getMessage(), 'crit');
+            $this->connector->log($e->getMessage(), 'critical');
             $msg = __('modal.refund_failed.label1');
             $msg .= ' '.__('modal.refund_failed.label2') . ' ' . $this->connector->getCoreLibrary()->getWhiteLabelsData()->getSupportEmail();
             $msg .= ' '.__('modal.refund_failed.label3') . ' ' . $this->connector->getCoreLibrary()->getWhiteLabelsData()->getSupportUrl();

@@ -27,7 +27,7 @@ class CancelPaymentAuthorisation implements \Magento\Framework\Event\ObserverInt
             $this->_connector->setOrderId($order->getIncrementId());
             $this->_connector->getCoreLibrary()->cancel($order->getIncrementId(), null);
         } catch (\Exception $e) {
-            $this->_connector->log($e->getMessage(), 'crit');
+            $this->_connector->log($e->getMessage(), 'critical');
             $order->addStatusToHistory($order->getStatus(), $e->getMessage());
         }
     }
